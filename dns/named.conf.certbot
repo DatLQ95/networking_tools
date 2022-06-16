@@ -1,0 +1,13 @@
+key "certbot." {
+        algorithm hmac-sha512;
+        secret "I48kh+9Ig+w7y3THArIRmJdGCuXm09yml1toM5qU1A78zB3Pul8TVU5vjOWfLbDtuqZouIJhOM2ON52WeYLPyw==";
+};
+
+zone "_acme-challenge.helloworld.com" {
+        type master;
+        file "/var/lib/bind/db._acme-challenge.helloworld.com";
+        check-names warn;
+        update-policy {
+                grant certbot. name _acme-challenge.helloworld.com. txt;
+        };
+};

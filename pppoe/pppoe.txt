@@ -1,0 +1,6 @@
+# To run set up
+cd rp-pppoe-3.15/src/
+# run configure:
+./configure
+To run it : 
+sudo pppoe-server -I enp0s3 192.168.3.1 -R 192.168.3.3 -F
