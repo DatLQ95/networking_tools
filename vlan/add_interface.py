@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import sys
-import os
 
 interface = sys.argv[1]
 
@@ -11,13 +10,13 @@ with open("../dhcp/isc-dhcp-server", "r") as f:
 
 for line in lines:
     if "INTERFACES" in line:
-        if interface in line: 
+        if interface in line:
             detect_mode = True
         else:
             detect_mode = False
-            new_line = line[:-2] + " " + interface + '"\n' 
+            new_line = line[:-2] + " " + interface + '"\n'
 
-if detect_mode == False: 
+if not detect_mode:
     lines = lines[:-1]
     lines.append(new_line)
     with open("../dhcp/isc-dhcp-server", "w+") as f:

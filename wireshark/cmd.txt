@@ -1,0 +1,1 @@
+ssh dluong@10.1.198.90 sudo ip netns exec ns2 tcpdump -ni ns2 -U -s0 -w - 'not port 22' and multicast | wireshark -k -i -

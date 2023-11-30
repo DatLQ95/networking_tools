@@ -18,4 +18,4 @@
 
 # On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
 #	Separate multiple interfaces with spaces, e.g. "eth0 eth1".
-INTERFACES="enp0s8 enp0s8.200 enp0s8.100 enp0s8.935 enp0s8.300 enp0s8.400 enp0s8.500"
+INTERFACES="wan wan.100 wan.101 wan.102 wan.300 wan.200 wan.100.200 wan.150 wan.150.151 wan.160"

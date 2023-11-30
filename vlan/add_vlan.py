@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import sys
-import os
 
 vlan = sys.argv[1]
 
@@ -16,7 +15,7 @@ for line in lines:
     if line.strip("\n") == conf_line:
         detect_mode = True
 
-if detect_mode == False: 
+if not detect_mode:
     with open("../dhcp/dhcpd.conf", "a") as f:
         f.write("\n")
         f.write("subnet 192.168." + str(vlan) + ".0 netmask 255.255.255.0 {\n")
